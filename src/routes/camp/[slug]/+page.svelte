@@ -25,7 +25,8 @@
         DollarSign,
         FileText,
         Sparkles,
-        MessageCircle
+        MessageCircle,
+        Settings
     } from '@lucide/svelte';
 
     type Props = {
@@ -302,6 +303,17 @@
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-wrap gap-4">
+                        {#if data.isOrganizer}
+                            <Button 
+                                size="lg" 
+                                class="text-lg px-8 py-6 shadow-xl hover:scale-105 transition-transform bg-gradient-to-r from-primary to-accent"
+                                href="/camp/{data.camp.slug}/dashboard"
+                            >
+                                <Settings class="size-5 mr-2" />
+                                เข้าสู่ Dashboard
+                            </Button>
+                        {/if}
+
                         {#if data.registrationStatus === 'open' && !data.hasRegistered}
                             <Button 
                                 size="lg" 
