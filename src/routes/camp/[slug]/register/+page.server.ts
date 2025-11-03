@@ -37,7 +37,7 @@ export const load: PageServerLoad = async ({ params, locals }) => {
                 const existingRegistration = await locals.pb.collection('registrations').getFirstListItem(
                     `camp="${camp.id}" && user="${locals.user.id}"`
                 );
-                throw redirect(303, `/camp/${slug}?already_registered=true`);
+                redirect(303, `/camp/${slug}?already_registered=true`);
             } catch (err: any) {
                 // Not registered yet, continue
                 if (err.status !== 404) {
@@ -151,7 +151,7 @@ export const actions = {
                 current_participants: camp.current_participants + 1
             });
 
-            throw redirect(303, `/camp/${slug}?registered=true`);
+            redirect(303, `/camp/${slug}?registered=true`);
         } catch (err: any) {
             console.error('Error registering:', err);
             if (err.status === 303) throw err;

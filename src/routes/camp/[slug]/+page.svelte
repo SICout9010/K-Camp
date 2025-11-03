@@ -28,6 +28,7 @@
         MessageCircle,
         Settings
     } from '@lucide/svelte';
+	import { getFileUrl } from '$lib/utils';
 
     type Props = {
         data: PageData;
@@ -403,7 +404,7 @@
                                             onclick={() => openGallery(index)}
                                         >
                                             <img 
-                                                src={image} 
+                                                src={getFileUrl(data.camp, image)} 
                                                 alt="รูปภาพค่าย {index + 1}"
                                                 class="w-full h-full object-cover transition-transform group-hover:scale-110"
                                             />
@@ -522,7 +523,7 @@
                                 <div class="size-12 rounded-full bg-primary/10 flex items-center justify-center">
                                     {#if data.organizer.avatar}
                                         <img 
-                                            src={data.organizer.avatar} 
+                                            src={getFileUrl(data.organizer, data.organizer.avatar)} 
                                             alt={data.organizer.name}
                                             class="size-12 rounded-full object-cover"
                                         />
@@ -719,7 +720,7 @@
                         <Button 
                             size="lg"
                             class="text-lg px-8 py-6"
-                            href="/register/{data.camp.slug}"
+                            href="/camp/{data.camp.slug}/register"
                         >
                             <CheckCircle class="size-5 mr-2" />
                             สมัครเข้าร่วมตอนนี้

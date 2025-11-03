@@ -1,22 +1,27 @@
 import type { PageServerLoad } from './$types';
+import PocketBase from 'pocketbase';
 import { error } from '@sveltejs/kit';
+import { PUBLIC_POCKETBASE_URL } from '$env/static/public';
+import { POCKETBASE_ADMIN, POCKETBASE_PASS } from '$env/static/private';
 
 export const load: PageServerLoad = async ({ params, locals }) => {
     const { slug } = params;
+    const pbAdmin = new PocketBase(PUBLIC_POCKETBASE_URL);
+    await pbAdmin.collection('_superusers').authWithPassword(POCKETBASE_ADMIN, POCKETBASE_PASS);
 
     try {
         // Fetch camp data by slug
-        const camp = await locals.pb.collection('camps').getFirstListItem(`slug="${slug}"`);
+        const camp = await pbAdmin.collection('camps').getFirstListItem(`slug="${slug}"`);
         
         // Fetch related data
         const [organizer, faculty, registrationForm] = await Promise.all([
-            locals.pb.collection('users').getOne(camp.organizer),
-            locals.pb.collection('faculties').getOne(camp.faculty),
-            locals.pb.collection('registration_forms').getFirstListItem(`camp="${camp.id}"`).catch(() => null)
+            pbAdmin.collection('users').getOne(camp.organizer),
+            pbAdmin.collection('faculties').getOne(camp.faculty),
+            pbAdmin.collection('registration_forms').getFirstListItem(`camp="${camp.id}"`).catch(() => null)
         ]);
 
         // Get registration count
-        const registrationCount = await locals.pb.collection('registrations').getList(1, 1, {
+        const registrationCount = await pbAdmin.collection('registrations').getList(1, 1, {
             filter: `camp="${camp.id}" && status!="cancelled"`
         });
 
@@ -25,7 +30,7 @@ export const load: PageServerLoad = async ({ params, locals }) => {
         let userRegistration = null;
         if (locals.user) {
             try {
-                userRegistration = await locals.pb.collection('registrations').getFirstListItem(
+                userRegistration = await pbAdmin.collection('registrations').getFirstListItem(
                     `camp="${camp.id}" && user="${locals.user.id}"`
                 );
                 hasRegistered = true;
@@ -38,7 +43,7 @@ export const load: PageServerLoad = async ({ params, locals }) => {
         const isOrganizer = locals.user?.id === camp.organizer;
 
         // Increment view count
-        await locals.pb.collection('camps').update(camp.id, {
+        await pbAdmin.collection('camps').update(camp.id, {
             views: camp.views + 1
         });
 
@@ -64,7 +69,7 @@ export const load: PageServerLoad = async ({ params, locals }) => {
             registrationStatus = 'closed';
         }
 
-        const campBanner = await locals.pb.files.getURL(camp, camp.banner);
+        const campBanner = await pbAdmin.files.getURL(camp, camp.banner);
 
         return {
             campBanner,
@@ -81,7 +86,7 @@ export const load: PageServerLoad = async ({ params, locals }) => {
         };
     } catch (err) {
         console.error('Error loading camp:', err);
-        throw error(404, 'ไม่พบค่ายที่คุณกำลังมองหา');
+        throw error(404, 'ไม่พบค่ายที่คุณกำลังมองหา คุณได้ล็อกอินเข้าสู่ระบบหรือยัง');
     }
 };
 

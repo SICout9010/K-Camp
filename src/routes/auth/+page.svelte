@@ -45,7 +45,7 @@
                         >
                             Logout
                         </Button>
-                        <a href="/kawaii" class="text-sm text-gray-500"><Button variant="outline" class="w-full">อยากไปดูรูปภาพของคนอื่นไหม? :3 กดได้เลยย</Button></a>
+                        <a href="/" class="text-sm text-gray-500"><Button variant="outline" class="w-full">กลับไปดูค่ายที่สนใจเลยย</Button></a>
                     </form>
                 </div>
             {:else}
