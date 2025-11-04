@@ -148,7 +148,7 @@
                 <!-- Image Container -->
                 <div class="relative h-full rounded-2xl overflow-hidden">
                     <img 
-                        src="/103_1x_shots_so.png" 
+                        src="/47_1x_shots_so.png" 
                         alt="K-Camp Platform Preview" 
                         class="w-full h-full object-cover shadow-xl"
                     />
