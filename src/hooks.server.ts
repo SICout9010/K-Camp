@@ -8,7 +8,7 @@ const securityHeaders = {
     'X-Frame-Options': 'DENY',
     'X-Content-Type-Options': 'nosniff',
     'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
-    'Content-Security-Policy': "default-src 'self' https://*.sentry.io https://*.googleapis.com https://*.google.com data:; img-src 'self' https://* blob: data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://apis.google.com https://accounts.google.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com",
+    // 'Content-Security-Policy': "default-src 'self' https://*.sentry.io https://*.googleapis.com https://*.google.com data:; img-src 'self' https://* blob: data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://apis.google.com https://accounts.google.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com",
 }
 
 // Add security headers to all responses
