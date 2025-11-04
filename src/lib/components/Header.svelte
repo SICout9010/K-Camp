@@ -10,7 +10,7 @@
     <!-- Desktop Menu -->
     <div class="hidden md:flex w-full items-center justify-between gap-4 px-6 py-3 rounded-full border border-border shadow-lg">
         <a href="/" class="hover:text-primary transition-colors font-medium">หน้าหลัก</a>
-        <a href="/camps" class="hover:text-primary transition-colors font-medium">ค้นหาค่าย</a>
+        <a href="/#camps" class="hover:text-primary transition-colors font-medium">ค้นหาค่าย</a>
         <a href="/" class="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">K-CAMP</a>
         <a href="/create-camp" class="hover:text-primary transition-colors font-medium">สร้างค่าย</a>
         <a href="/auth" class="hover:text-primary transition-colors font-medium">เข้าสู่ระบบ</a>

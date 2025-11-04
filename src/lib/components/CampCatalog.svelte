@@ -330,7 +330,7 @@
                     <Button 
                         size="lg" 
                         variant="outline"
-                        href="/camps"
+                        href="/#camps"
                         class="group"
                     >
                         ดูค่ายทั้งหมด
