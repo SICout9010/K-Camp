@@ -5,12 +5,14 @@
 K-CAMP streamlines the process of organizing camps by providing ready-to-use templates for registration websites and forms, while creating a centralized discovery hub for students seeking opportunities across all faculties.
 
 ## ✨ Project Preview
+### Video 🎬
 <video controls src="./preview/present-1-1762249146314.mp4" title="Title"></video>
+### Image 🖼️
 ![alt text](./preview/image.png)
+![alt text](./preview/image20.png)
 ![alt text](./preview/image1.png)
 ![alt text](./preview/imagecreate.png)
 ![alt text](./preview/imagedash.png)
-![alt text](./preview/image20.png)
 
 
 \## ✨ Features
@@ -47,7 +49,7 @@ Before you begin, ensure you have installed:
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/SICout9010/K-Camp.git
 cd K-Camp
 ```
 
@@ -98,7 +100,7 @@ The app will be available at `http://localhost:5173`
 ## 📁 Project Structure
 
 ```
-k-camp-svelte/
+k-camp/
 ├── src/
 │   ├── lib/
 │   │   ├── components/      # Reusable components
