@@ -5,9 +5,15 @@
 K-CAMP streamlines the process of organizing camps by providing ready-to-use templates for registration websites and forms, while creating a centralized discovery hub for students seeking opportunities across all faculties.
 
 ## ✨ Project Preview
+<video controls src="./preview/present-1-1762249146314.mp4" title="Title"></video>
+![alt text](./preview/image.png)
+![alt text](./preview/image1.png)
+![alt text](./preview/imagecreate.png)
+![alt text](./preview/imagedash.png)
+![alt text](./preview/image20.png)
 
 
-## ✨ Features
+\## ✨ Features
 
 - 🔍 **AI-Powered Search** - Semantic search to find camps by meaning, not just keywords
 - 📝 **Camp Management** - Create and manage camps with a powerful dashboard
