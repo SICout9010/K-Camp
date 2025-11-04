@@ -4,6 +4,9 @@
 
 K-CAMP streamlines the process of organizing camps by providing ready-to-use templates for registration websites and forms, while creating a centralized discovery hub for students seeking opportunities across all faculties.
 
+## ✨ Project Preview
+
+
 ## ✨ Features
 
 - 🔍 **AI-Powered Search** - Semantic search to find camps by meaning, not just keywords
@@ -39,7 +42,7 @@ Before you begin, ensure you have installed:
 
 ```bash
 git clone <repository-url>
-cd k-camp-svelte
+cd K-Camp
 ```
 
 ### 2. Install dependencies
