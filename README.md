@@ -7,10 +7,7 @@ K-CAMP streamlines the process of organizing camps by providing ready-to-use tem
 ## ✨ Project Preview
 ### Video 🎬
 
-
-
-https://github.com/user-attachments/assets/13ff5551-b71d-4f97-81f3-58458d9c5254
-
+<video src="./preview/1.mp4" width="320" height="240" controls></video>
 
 ### Image 🖼️
 ![alt text](./preview/imagemain.png)
